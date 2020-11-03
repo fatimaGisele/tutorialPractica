@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="ticket-madre" id="ticket">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="ticket-wrapper">
+        <div class="ticket-visual">
+            <div class="ticket-prof">
+                <img src="neon.jpg" alt="neon light" class="profile-image">
+                <div class="text-profile">
+                    <p class="text-name"> Fatima Altamirano</p>
+                    <p class="sub-text"> 
+                        <span class="icon">
+                            <img src="git.jpg" alt="icon-git"> 
+                        </span> 
+                        fatimaGisele
+                    </p>
+                </div>
+            </div>
+            <div class="ticket-evento">
+                <img src="icon/001-eventbrite.png" alt="event">
+            </div>
+        </div>
+        <div class="ticket-number-wrapper">
+            <div class="ticket-number">
+                N°256518
+            </div>
+        </div>
+    </div>
+  </div>  
+  <script>
+      window.addEventListener("mousemove",e=>{
+          const degreeX=(e.clientY-centerPoint.y)*0.055;
+          const degreeY=(e.clientX-centerPoint.x)*-0.055;
+          ticket.style.transform=`perspective(1000px) rotateX(${degreeX}deg) rotateY(${degreeY}deg)`;
+      });
+
+      const ticket=document.getElementById("ticket");
+      const {x, y, width, height}= ticket.getBoundingClientRect();
+      const centerPoint={x:x+width/2, y:y+height/2};
+
+  </script>
+</body>
+</html>
